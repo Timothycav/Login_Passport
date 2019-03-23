@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
-const methodOverride = require('method-override')
+
 const flash = require('connect-flash')
 const session = require('express-session')
 const bodyParser = require('body-parser')
@@ -11,16 +11,16 @@ const mongoose = require('mongoose');
 const app = express();
 
 //passport config
-require('./config/passport')(passport);
+//require('./config/passport')(passport);
 //DB config
-const db = require('./config/database');
+//const db = require('./config/database');
 
-mongoose.connect(db.mongoURI, {
+/*mongoose.connect(db.mongoURI, {
     useMongoClient: true,
     useNewUrlParser: true
 }) 
 .then(() => console.log('MongoDB Connected . . .'))
-.catch(err => console.log(err));
+.catch(err => console.log(err));*/
 
 
 
@@ -35,7 +35,7 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-    const title = 'Welcome Today';
+    const title = 'Log In or Sign Up';
 
     res.render('index', {
         title: title,
