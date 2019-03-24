@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
     });
 });
 
-
+app.use('/users', users);
 
 const port = process.env.PORT || 5050;
 
